@@ -213,7 +213,17 @@ const Page = () => {
     </div>
   );
 };
-const ExperienceItem = ({ company, logo, role, date }) => {
+const ExperienceItem = ({
+  company,
+  logo,
+  role,
+  date,
+}: {
+  company: string;
+  logo: string;
+  role: string;
+  date: string;
+}) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start border-t border-white/10 pt-10">
       {/* LEFT */}
