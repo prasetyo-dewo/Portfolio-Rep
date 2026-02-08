@@ -71,8 +71,8 @@ const pages = () => {
         {/* ================= CENTER COLUMN ================= */}
         <div className="relative flex flex-col items-center text-center">
           {/* Available */}
-          <span className="mb-6 inline-flex items-center gap-2 bg-[#7b2a45] px-4 py-2 rounded-full text-sm z-20">
-            <span className="w-2 h-2 bg-green-400 rounded-full" />
+          <span className="mb-6 inline-flex items-center gap-2 bg-[#7b2a45] px-4 py-2 rounded-full text-sm font-semibold z-20">
+            <span className="w-2 h-2 bg-[#E26190] rounded-full" />
             Available for Hire
           </span>
 
@@ -106,6 +106,16 @@ const pages = () => {
       pointer-events-none
     "
           />
+          {/* SCROLL */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 text-sm text-white/70">
+            Scroll Down
+            <Image
+              src="/icons/Mouse.svg"
+              alt=""
+              width={12}
+              height={18}
+            />
+          </div>
         </div>
 
         {/* ================= RIGHT COLUMN ================= */}
@@ -134,17 +144,6 @@ const pages = () => {
             </span>
           </button>
         </div>
-      </div>
-
-      {/* SCROLL */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 text-sm text-white/70">
-        Scroll Down
-        <Image
-          src="/icons/Mouse.svg"
-          alt=""
-          width={12}
-          height={18}
-        />
       </div>
     </div>
   );

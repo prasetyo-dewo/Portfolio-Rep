@@ -160,7 +160,7 @@ const Page = () => {
           <div className="absolute inset-0 bg-[#b67382]/40 translate-y-3 rounded-[40px] scale-[0.98]"></div>
 
           {/* Main Card */}
-          <div className="relative bg-[#b67382] rounded-[40px] p-8 md:p-16 text-center text-white shadow-xl">
+          <div className="relative bg-[#B76080] rounded-[40px] p-8 md:p-16 text-center text-white shadow-xl">
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-8">
               {[...Array(5)].map((_, i) => (
