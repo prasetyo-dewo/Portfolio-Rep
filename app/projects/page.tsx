@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
 import { ArrowRight, ArrowLeft, Star } from "lucide-react";
@@ -103,7 +105,13 @@ const Page = () => {
       <div className="py-24 bg-[#0A0D12] text-white px-4">
         <div className="max-w-7xl mx-auto">
           {/* HEADER */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20"
+          >
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               Experiences That <br />
               <span className="text-yellow-400">Shaped Me!</span>
@@ -113,10 +121,23 @@ const Page = () => {
               From startups to side projects, every step has been a chance to
               learn, build, and level up.
             </p>
-          </div>
+          </motion.div>
 
           {/* EXPERIENCE LIST */}
-          <div className="space-y-16">
+          <motion.div
+            className="space-y-16"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.2,
+                },
+              },
+            }}
+          >
             <ExperienceItem
               company="airbnb"
               logo="/icons/airbnb.svg"
@@ -137,7 +158,7 @@ const Page = () => {
               role="Frontend Developer"
               date="2025 - Present"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -225,7 +246,14 @@ const ExperienceItem = ({
   date: string;
 }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start border-t border-white/10 pt-10">
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start border-t border-white/10 pt-10"
+    >
       {/* LEFT */}
       <div>
         <p className="text-sm text-gray-500 mb-2">{date}</p>
@@ -248,11 +276,9 @@ const ExperienceItem = ({
       {/* RIGHT */}
       <p className="text-gray-400 leading-relaxed text-sm">
         Built responsive web interfaces using modern frameworks like React.js,
-        ensuring seamless integration with backend systems. Optimized
-        performance, implemented accessible designs, and delivered clean,
-        reusable code to enhance user experience and scalability.
+        ensuring seamless integration with backend systems.
       </p>
-    </div>
+    </motion.div>
   );
 };
 

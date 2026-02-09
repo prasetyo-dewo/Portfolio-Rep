@@ -52,7 +52,12 @@ const page = () => {
   return (
     <main className="relative w-full overflow-x-hiddenbg-[#FFFFFF] font-sans">
       {/* SECTION 1: TECH STACK */}
-      <section className="py-20 px-4">
+      <section
+        className="py-20 px-4"
+        style={{
+          background: "linear-gradient(to top, #9E385E1A 0%, transparent 10%)",
+        }}
+      >
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-4">
             Code, Design, and Everything in Between
@@ -62,7 +67,7 @@ const page = () => {
             life.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-center">
             {technologies.map((tech, index) => (
               <div
                 key={index}

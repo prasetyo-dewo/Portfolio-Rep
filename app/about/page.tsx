@@ -3,19 +3,19 @@ import Image from "next/image";
 
 const features = [
   {
-    iconSrc: "/icons/feature-Gear.png",
+    iconSrc: "/images/feature-Gear.png",
     title: "COMPONENT-BASED DEVELOPMENT",
     description:
       "Reusable, scalable code built with modern frameworks like React or Vue.",
   },
   {
-    iconSrc: "/icons/feature-Pallet.png",
+    iconSrc: "/images/feature-Pallet.png",
     title: "PIXEL-PERFECT UI IMPLEMENTATION",
     description:
       "Translating design into high-fidelity user interfaces with attention to detail.",
   },
   {
-    iconSrc: "/icons/feature-Smartphone.png",
+    iconSrc: "/images/feature-Smartphone.png",
     title: "RESPONSIVE & ACCESSIBLE DESIGN",
     description:
       "Optimized layouts that work seamlessly across all screen sizes and devices.",
@@ -36,12 +36,7 @@ const page = () => {
       </section>
 
       {/* Features Section */}
-      <section
-        className="py-20"
-        style={{
-          background: "linear-gradient(to bottom, #9E385E00 0%, #9E385E00 10%)",
-        }}
-      >
+      <section className="py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
             {features.map((item, index) => (
@@ -58,8 +53,8 @@ const page = () => {
                   <Image
                     src={item.iconSrc}
                     alt={item.title}
-                    width={24}
-                    height={24}
+                    width={35}
+                    height={35}
                     priority={false}
                   />
                 </div>
